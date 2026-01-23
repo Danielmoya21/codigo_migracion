@@ -1,0 +1,83 @@
+
+
+general_Employment
+  variable      VIF
+         p 3.119431
+    p_bajo 8.045593
+    p_alto 8.810500
+ecivil_2.0 1.214505
+ecivil_3.0 1.004888
+ecivil_4.0 1.000923
+ecivil_5.0 1.077280
+ecivil_6.0 1.040271
+ecivil_7.0 1.013781
+ecivil_8.0 1.592612
+ecivil_9.0 1.000154
+
+Employment - high_skill
+  variable       VIF
+         p  3.244797
+    p_bajo  9.259436
+    p_alto 10.446835
+ecivil_2.0  1.245679
+ecivil_3.0  1.005667
+ecivil_4.0  1.001156
+ecivil_5.0  1.090620
+ecivil_6.0  1.047555
+ecivil_7.0  1.016136
+ecivil_8.0  1.638476
+ecivil_9.0  1.000208
+
+Employment - low_skill
+  variable       VIF
+         p  3.361461
+    p_bajo  8.094492
+    p_alto 10.938964
+ecivil_2.0  1.176695
+ecivil_3.0  1.004175
+ecivil_4.0  1.000587
+ecivil_5.0  1.064602
+ecivil_6.0  1.027371
+ecivil_7.0  1.012088
+ecivil_8.0  1.562880
+
+general_Wages
+  variable       VIF
+         p  3.165897
+    p_bajo  9.547611
+    p_alto 10.499198
+ecivil_2.0  1.249936
+ecivil_3.0  1.006234
+ecivil_4.0  1.000956
+ecivil_5.0  1.096881
+ecivil_6.0  1.057629
+ecivil_7.0  1.015342
+ecivil_8.0  1.522456
+ecivil_9.0  1.000100
+
+Wages - high_skill
+  variable       VIF
+         p  3.255214
+    p_bajo 10.344326
+    p_alto 11.835199
+ecivil_2.0  1.268583
+ecivil_3.0  1.006726
+ecivil_4.0  1.001359
+ecivil_5.0  1.103517
+ecivil_6.0  1.061595
+ecivil_7.0  1.016105
+ecivil_8.0  1.567106
+ecivil_9.0  1.000126
+
+Wages - low_skill
+  variable      VIF
+         p 4.326147
+    p_bajo 9.792224
+    p_alto 9.005870
+ecivil_2.0 1.185972
+ecivil_3.0 1.004673
+ecivil_4.0 1.000095
+ecivil_5.0 1.090094
+ecivil_6.0 1.046236
+ecivil_7.0 1.015983
+ecivil_8.0 1.319067
