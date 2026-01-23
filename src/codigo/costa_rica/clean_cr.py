@@ -203,4 +203,3 @@ for k, v in globals().items():
         
 pyreadstat.write_sav(df, output.as_posix(), column_labels = col_labels, variable_value_labels = var_labels)
 print('dataframe saved')
-

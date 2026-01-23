@@ -1,8 +1,7 @@
 from polars import col as c
 import polars as pl
 
-exogenas = 'p*id_dependientes + p_bajo*id_dependientes + p_alto*id_dependientes + C(a6)'
-exogenas = 'p*id_dependientes + C(a6)'
+exogenas = 'p + p_bajo + p_alto + C(a6)'
 cols_exogenas = 'p p_bajo p_alto a6'.split()
 categoricals = 'a6'
 

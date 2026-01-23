@@ -67,3 +67,18 @@ def compute_vif(df:pd.DataFrame|pl.DataFrame, vars:list[str], cat:list[str]=None
 
 def write_df_txt(df:pd.DataFrame, df_name:str):
     return f'\n\n{df_name}\n{df.to_string(index=False)}'
+
+def generate_observations_tables(dfs:list[pl.DataFrame], paths:list[Path], variable:str='region'):
+    for _df, path in zip(dfs, paths):
+        create_xl_wb(path)
+        cross_tab(_df.to_pandas(), cols=f'habilidad {variable}'.split(), args={'dropna':False}).to_excel(path, sheet_name='all_years', index=False)
+        
+        with pd.ExcelWriter(path, mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer:
+            row=1
+            for year, gp in _df.sort('anno').group_by('anno', maintain_order=True):
+                year=year[0]
+                gp = gp.to_pandas().reset_index()
+                gp = cross_tab(gp, ['habilidad', f'{variable}'], args={'dropna':False})
+                fmt_low_people_cells(gp).to_excel(writer, sheet_name='years', startrow=row, index=False)
+                writer.book['years'].cell(row, column=1, value=year)
+                row += gp.shape[0] + 3
