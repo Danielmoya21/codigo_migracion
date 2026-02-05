@@ -29,7 +29,6 @@ if group_skills=='y':
     
 dis_res.var_labels=var_labels
 
-
 #Scale proportions
 df = df.with_columns(c('p p_bajo p_alto'.split()).mul(10))
 
@@ -55,6 +54,7 @@ filter_exogenas = ( # Get observations with no null values for all regressors
         c.habilidad.is_in([df['habilidad'].min(),df['habilidad'].max()])
     )
 
+endogena_emp = 'Employment'
 reg_df_emp = (  # Generate df for employment regression
     df
     .filter(
@@ -66,7 +66,6 @@ reg_df_emp = (  # Generate df for employment regression
         )
     .rename({'condact':'Employment'})
     )
-endogena_emp = 'Employment'
 
 #--------------------------------------
 # WAGE FILTERS

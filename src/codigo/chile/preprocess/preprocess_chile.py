@@ -1,3 +1,4 @@
+from locale import normalize
 import pyreadstat
 import polars as pl
 from polars import col as c
@@ -6,7 +7,6 @@ from pathlib import Path
 import ucr_tools.core.data_analysis as da
 import numpy as np
 import os
-from itertools import combinations
 os.chdir(Path(__file__).parent)
 
 years = [2015,2017,2020,2022]
@@ -94,6 +94,30 @@ df_2015, df_2017 =  [
 
 df_2022 = df_2022.rename({'area':'zona'})
 
+
+# --------------------------------  
+# Añadir variable COTIZA
+# --------------------------------
+year_country_var = {
+    2015:{'var':'o29', 'no_cotiza':7, 'no_sabe':9},  #513 Venezuela - 504 Chile
+    2017: {'var':'o29', 'no_cotiza':7, 'no_sabe':9}, #513 Venezuela - 504 Chile
+    2020: {'var':'o32', 'no_cotiza':6, 'no_sabe':9}, #513 Venezuela - Chile no sale
+}
+
+df_2015, df_2017, df_2020 = [
+    (
+        dictio:=year_country_var.get(y),
+        df.with_columns(
+            pl.when(c(dictio.get('var')).eq(dictio.get('no_cotiza')) | c(dictio.get('var')).is_null())
+            .then(0)
+            .when(c(dictio.get('var')).eq(dictio.get('no_sabe')))
+            .then(None)
+            .otherwise(1)
+            .alias('cotiza')
+        )
+    )[1]
+    for df, y in zip([df_2015, df_2017, df_2020], [2015, 2017, 2020])
+]
 
 # --------------------------------  
 # VERIFICAR COLUMNAS

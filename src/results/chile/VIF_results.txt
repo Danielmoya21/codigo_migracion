@@ -2,78 +2,78 @@
 
 general_Employment
   variable      VIF
-         p 3.228389
-    p_bajo 6.575574
-    p_alto 6.800192
-ecivil_2.0 1.188495
-ecivil_3.0 1.004387
-ecivil_4.0 1.000492
-ecivil_5.0 1.041417
-ecivil_6.0 1.017352
-ecivil_7.0 1.007875
-ecivil_8.0 1.550627
+         p 2.483699
+    p_bajo 6.046029
+    p_alto 7.463251
+ecivil_2.0 1.165766
+ecivil_3.0 1.003993
+ecivil_4.0 1.001312
+ecivil_5.0 1.073390
+ecivil_6.0 1.041905
+ecivil_7.0 1.027165
+ecivil_8.0 1.445647
 
 Employment - high_skill
-  variable      VIF
-         p 4.008198
-    p_bajo 7.462749
-    p_alto 7.876474
-ecivil_2.0 1.234854
-ecivil_3.0 1.005696
-ecivil_4.0 1.000513
-ecivil_5.0 1.045260
-ecivil_6.0 1.020962
-ecivil_7.0 1.008063
-ecivil_8.0 1.695268
+  variable       VIF
+         p  3.038926
+    p_bajo  9.023790
+    p_alto 10.155485
+ecivil_2.0  1.232412
+ecivil_3.0  1.005413
+ecivil_4.0  1.001755
+ecivil_5.0  1.094838
+ecivil_6.0  1.053865
+ecivil_7.0  1.028421
+ecivil_8.0  1.608958
 
 Employment - low_skill
   variable      VIF
-         p 2.516679
-    p_bajo 4.989697
-    p_alto 6.422766
-ecivil_2.0 1.148273
-ecivil_3.0 1.002618
-ecivil_4.0 1.000508
-ecivil_5.0 1.041227
-ecivil_6.0 1.014146
-ecivil_7.0 1.009360
-ecivil_8.0 1.381955
+         p 2.867985
+    p_bajo 3.567823
+    p_alto 7.049616
+ecivil_2.0 1.120615
+ecivil_3.0 1.002728
+ecivil_4.0 1.000977
+ecivil_5.0 1.066535
+ecivil_6.0 1.031935
+ecivil_7.0 1.042043
+ecivil_8.0 1.262686
 
 general_Wages
-  variable      VIF
-         p 3.478645
-    p_bajo 7.777798
-    p_alto 7.593892
-ecivil_2.0 1.261196
-ecivil_3.0 1.005867
-ecivil_4.0 1.000448
-ecivil_5.0 1.034382
-ecivil_6.0 1.013944
-ecivil_7.0 1.003401
-ecivil_8.0 1.421600
+  variable       VIF
+         p  3.017901
+    p_bajo  8.911232
+    p_alto 10.158589
+ecivil_2.0  1.233825
+ecivil_3.0  1.005735
+ecivil_4.0  1.000973
+ecivil_5.0  1.092701
+ecivil_6.0  1.055605
+ecivil_7.0  1.014295
+ecivil_8.0  1.494472
 
 Wages - high_skill
-  variable      VIF
-         p 3.879948
-    p_bajo 8.398558
-    p_alto 8.421280
-ecivil_2.0 1.289624
-ecivil_3.0 1.007067
-ecivil_4.0 1.000427
-ecivil_5.0 1.036942
-ecivil_6.0 1.016228
-ecivil_7.0 1.003740
-ecivil_8.0 1.502644
+  variable       VIF
+         p  3.256692
+    p_bajo 10.366331
+    p_alto 11.852583
+ecivil_2.0  1.268463
+ecivil_3.0  1.006670
+ecivil_4.0  1.001368
+ecivil_5.0  1.103947
+ecivil_6.0  1.061495
+ecivil_7.0  1.016127
+ecivil_8.0  1.568969
 
 Wages - low_skill
   variable      VIF
-         p 2.641158
-    p_bajo 5.632779
-    p_alto 6.629827
-ecivil_2.0 1.221446
-ecivil_3.0 1.002716
-ecivil_4.0 1.000928
-ecivil_5.0 1.032486
-ecivil_6.0 1.009488
-ecivil_7.0 1.003181
-ecivil_8.0 1.230903
+         p 2.970834
+    p_bajo 3.705951
+    p_alto 6.644105
+ecivil_2.0 1.152614
+ecivil_3.0 1.002967
+ecivil_4.0 1.000175
+ecivil_5.0 1.081722
+ecivil_6.0 1.044034
+ecivil_7.0 1.014482
+ecivil_8.0 1.258972

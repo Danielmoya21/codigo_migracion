@@ -82,3 +82,6 @@ def generate_observations_tables(dfs:list[pl.DataFrame], paths:list[Path], varia
                 fmt_low_people_cells(gp).to_excel(writer, sheet_name='years', startrow=row, index=False)
                 writer.book['years'].cell(row, column=1, value=year)
                 row += gp.shape[0] + 3
+                
+def wrap_word(col):
+    return pl.lit('('), c(col), pl.lit(')')

@@ -14,7 +14,7 @@ grouping = input('Do you want to group skill cells? y/n\n>')
 
 output_name = f'chile_{args.var}_processed' if grouping!='y' else f'chile_{args.var}_grouped_processed'
 output = bases.joinpath(f'chile/limpio/{output_name}.sav')
-cols = 'esc edad o10 sexo educ oficio1_08 folio region zona ytrabajocor expr activ ecivil o15 asal rama1 expr anno nacionalidad'.split()
+cols = 'esc edad o10 sexo educ oficio1_08 folio region zona ytrabajocor expr activ ecivil o15 asal rama1 expr anno nacionalidad cotiza r1b country_code'.split()
 
 load_file = bases.joinpath('chile/limpio/chile_all.sav')
 df, meta = pyreadstat.read_sav(load_file, output_format='polars', usecols=cols)
@@ -27,9 +27,26 @@ col_labels = meta.column_names_to_labels
 # -----------------------------------
 df = (
     df.with_columns(
-        c.folio.mul(1e4).add(c.anno)
+        pl.concat_str(c.folio, c.anno)
+        .alias('iddh')
     )
 )
+
+# -----------------------------------
+# DEPENDIENTES HOGAR
+# -----------------------------------
+df = (
+    df
+    .with_columns(
+        ((c.edad.lt(6) | c.edad.gt(65))).sum().over('iddh')
+        .alias('dependientes')
+    )
+    .with_columns(
+        pl.when(c.dependientes.gt(0)).then(1).otherwise(0)
+        .alias('id_dependientes')
+    )
+)
+
 
 # -----------------------------------
 # GENERAL FILTERS
