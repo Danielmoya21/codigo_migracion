@@ -1,3 +1,5 @@
+import select
+
 import pyreadstat
 import polars as pl
 from polars import col as c
@@ -6,7 +8,7 @@ from pathlib import Path
 from functools import reduce
 from definitions import bases
 
-country = 'chile'
+country = 'cr'
 bases = bases.joinpath(country)
 encoding='utf-8'
 
@@ -38,7 +40,8 @@ common_cols = list(
     )
 )
 
-final_df = pl.concat([df.select(common_cols) for df in dfs], how='diagonal_relaxed')
+# final_df = pl.concat([df,select(common_cols) for df in dfs], how='diagonal_relaxed')
+final_df = pl.concat([df for df in dfs], how='diagonal_relaxed')
 
 meta.column_names_to_labels = {k.casefold():v for k, v in meta.column_names_to_labels.items()}
 meta.variable_value_labels = {k.casefold():v for k, v in meta.variable_value_labels.items()}

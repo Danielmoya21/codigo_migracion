@@ -8,6 +8,10 @@ import openpyxl
 import re
 from statsmodels.stats.outliers_influence import variance_inflation_factor as vif
 
+def set_var_labels(labels: dict) -> None:
+    global var_labels
+    var_labels = labels
+
 table_args = {
     'type':'gt',
     'keep':'p|p_bajo|p_alto',

@@ -29,8 +29,10 @@ if not vif_file.exists():
 #--------------------------------------
 # MODEL
 #--------------------------------------
-fixed_effects = f'anno + {pais.args.var}' #Modify fix effects if needed
-cluster = pais.args.var
+# fixed_effects = f'anno + {pais.args.var}' #Modify fix effects if needed
+# cluster = pais.args.var
+fixed_effects = f'anno + region' #Modify fix effects if needed
+cluster = 'region'
 skill_groups = {
     'high_skill': {'range':(7,10), 'closed':'left'},
     'low_skill': {'range':(pais.df['habilidad'].min(),6), 'closed':'right'},

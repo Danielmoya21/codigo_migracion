@@ -13,8 +13,10 @@ def filter_exogenas(min_skill=1):
 
 def employment_filters(nac=1, sex=2):
     return (
-    c.nacionalidad.eq(nac),
+    # c.nacionalidad.eq(nac),
     c.a4.eq(sex),
+    c.exp.lt(40),
+    c.hortotnorm.is_null() | c.hortotnorm.is_between(0,72, closed='left'),
     )
 
 def wage_filters(nac=1, sex=2):

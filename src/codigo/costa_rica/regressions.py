@@ -38,8 +38,8 @@ df = df.with_columns(c('p p_bajo p_alto'.split()).mul(10))
 employment_filters = (
     c.nacionalidad.eq(1),
     c.a4.eq(args.sexo),
-    # c.exp.lt(40),
-    # c.hortotnorm.is_null() | c.hortotnorm.is_between(0,72, closed='left')
+    c.exp.lt(40),
+    c.hortotnorm.is_null() | c.hortotnorm.is_between(0,72, closed='left')
     )
 
 #--------------------------------------
