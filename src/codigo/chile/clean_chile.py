@@ -150,8 +150,8 @@ if grouping == 'y':
 else:
     mat_group = ''
 
-# weight_matrix = root.joinpath(f'codigo/chile/pesos_{args.var}{mat_group}_chile.xlsx') #Esta es la matriz original
-weight_matrix = root.joinpath(f'codigo/chile/pesos_region_chile_2017.xlsx')
+weight_matrix = root.joinpath(f'codigo/chile/pesos_{args.var}{mat_group}_chile.xlsx') #Esta es la matriz original
+# weight_matrix = root.joinpath(f'codigo/chile/pesos_region_chile_2017.xlsx')
 pesos = pl.read_excel(weight_matrix)
 print(f'matrix : {weight_matrix.name} with shape: {pesos.shape} has been loaded')
 pesos = pesos.unpivot(index='habilidad', variable_name=args.var, value_name='weight').with_columns(c(f'{args.var} weight'.split()).cast(pl.Float64), c.habilidad.cast(pl.UInt32))
